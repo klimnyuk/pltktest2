@@ -1,0 +1,15 @@
+sudo apt-get install mysql-server -y
+sudo mysqli
+CREATE DATABASE pltk;
+USE pltk;
+CREATE TABLE reasons_to_work_in_playtika ( id INT AUTO_INCREMENT PRIMARY KEY, insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(), reason VARCHAR (2048) );
+INSERT INTO reasons_to_work_in_playtika (reason) VALUES ('Because I want to be part of a great company');
+INSERT INTO reasons_to_work_in_playtika (reason) VALUES ('Because I love automatization');
+INSERT INTO reasons_to_work_in_playtika (reason) VALUES ('Because Linux is very interesting to me');
+INSERT INTO reasons_to_work_in_playtika (reason) VALUES ('Because Playtika is a fast-growing company');
+INSERT INTO reasons_to_work_in_playtika (reason) VALUES ('Because I want to expand my skills');
+exit
+sudo mysqldump --databases pltk  > my_dump.sql
+git add my_dump.sql
+git commit -m "dump commit"
+git push origin master
